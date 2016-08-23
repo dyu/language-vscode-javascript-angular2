@@ -1,36 +1,21 @@
 {
 	"fileTypes": [],
-	"injectionSelector": "L:meta.block",
-	"name": "object-member-ng-template",
+	"injectionSelector": "L:meta.template",
+	"name": "ng-template",
 	"patterns": [
 		{
-			"include": "#object-member-ng-template"
+			"include": "#template-ng"
 		}
 	],
 	"repository": {
-	
-		"object-member-ng-template": {
-			"begin": "template\\s*:",
-			"end": "(?=,|\\})",
-			"name": "meta.object.member",
-			"patterns": [
-				{
-					"include": "#template-ng"
-				},
-				{
-					"include": "source.ts"
-				}
-			]
-		},
-
 		"template-ng": {
-			"begin": "`|\\(`",
+			"begin": "\\r?\\n",
 			"beginCaptures": {
 				"0": {
 					"name": "string.template"
 				}
 			},
-			"end": "`\\)|`",
+			"end": "(?=`)",
 			"endCaptures": {
 				"0": {
 					"name": "string.template"
@@ -43,9 +28,12 @@
 				},
 				{
  					"include": "#ng-style"
-  			},
+  			    },
 				{
 					"include": "#ng"
+				},
+				{
+					"include": "source.ts"
 				}
 			]
 		},
