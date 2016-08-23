@@ -170,11 +170,19 @@
 			},
 			"name": "meta.brace.curly",
 			"patterns": [
+			    {
+			        "include": "#ng-stash-keys"
+			    },
 				{
 					"include": "source.ts"
 				}
 			]
 		},
+		
+		"ng-stash-keys": {
+			"match": " *([$]?[a-zA-Z0-9_]+[.]?)+",
+			"name": "punctuation.definition.keys"
+		},		
 
 		"ng-evaluated-code-attribute-double": {
 			"begin": "(?<=\\]=|\\)=)\"",
