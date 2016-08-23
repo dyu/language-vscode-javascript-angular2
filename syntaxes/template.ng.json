@@ -162,30 +162,22 @@
 			"begin": "{{",
 			"beginCaptures": {
 				"0": {
-					"name": "punctuation.definition.brace.curly.start"
+					"name": "meta.stache.begin"
 				}
 			},
 			"end": "}}",
 			"endCaptures": {
 				"0": {
-					"name": "punctuation.definition.brace.curly.end"
+					"name": "meta.stache.end"
 				}
 			},
-			"name": "meta.brace.curly",
+			"name": "meta.stache",
 			"patterns": [
-			    {
-			        "include": "#ng-stash-keys"
-			    },
 				{
 					"include": "#template-substitution-el"
 				}
 			]
 		},
-		
-		"ng-stash-keys": {
-			"match": " *([$]?[a-zA-Z0-9_]+[.]?)+",
-			"name": "punctuation.definition.keys"
-		},		
 
 		"ng-string-double-quoted": {
 			"begin": "\"",
