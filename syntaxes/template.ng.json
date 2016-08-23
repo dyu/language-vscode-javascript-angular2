@@ -84,6 +84,9 @@
 					"include": "#ng-evaluated-code"
 				},
 				{
+					"include": "#template-substitution-el"
+				},
+				{
 					"include": "#ng-tag-close"
 				},
 				{
@@ -112,6 +115,9 @@
 				},
 				{
 					"include": "#ng-evaluated-code"
+				},
+				{
+					"include": "#template-substitution-el"
 				},
 				{
 					"include": "#ng-tag-close"
@@ -171,7 +177,7 @@
 			        "include": "#ng-stash-keys"
 			    },
 				{
-					"include": "source.ts"
+					"include": "#template-substitution-el"
 				}
 			]
 		},
@@ -194,7 +200,37 @@
 					"name": "punctuation.definition.string.end"
 				}
 			},
-			"name": "string.quoted.double"
+			"name": "string.quoted.double",
+			"patterns": [
+			    {
+			        "include": "#ng-evaluated-code"
+			    },
+				{
+					"include": "#template-substitution-el"
+				}
+			]
+		},
+		
+		"template-substitution-el": {
+			"begin": "\\$\\{",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.others.ts"
+				}
+			},
+			"end": "\\}",
+			"endCaptures": {
+				"0": {
+					"name": "keyword.others.ts"
+				}
+			},
+			"name": "template.element.ts",
+			"patterns": [
+				{
+					"match": " *[a-zA-Z$][a-zA-Z0-9_]*([.][a-zA-Z$][a-zA-Z0-9_]+)* *",
+					"name": "template.element.const"
+				}
+			]
 		},
         
 		"ng-tag-attribute-assignment": {
