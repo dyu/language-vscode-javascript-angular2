@@ -198,6 +198,9 @@
 			"name": "template.element.ts",
 			"patterns": [
 				{
+					"include": "source.ts"
+				},
+				{
 					"match": " *[a-zA-Z$][a-zA-Z0-9_]*([.][a-zA-Z$][a-zA-Z0-9_]+)* *",
 					"name": "template.element.const"
 				}
